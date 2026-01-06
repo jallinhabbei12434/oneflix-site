@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial de Instalação Android | ONEFLIX APP</title>
     <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+    !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;n=f.fbq=function(){
+            n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+        };
+        if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];
+        t=b.createElement(e);t.async=!0;
+        t.src=v;
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2101230197361495'); // ← Trocar pelo ID real
+    fbq('track', 'PageView'); // ← Adicionar isso (rastreia visita)
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         
@@ -209,9 +225,7 @@
                 </div>
             </div>
 
-            <a href="javascript:void(0)" onclick="downloadAndroid()" class="inline-block bg-white hover:bg-gray-100 text-black font-black text-xl px-12 py-5 rounded-full shadow-lg shadow-red-600/30 transition-all duration-300 hover:scale-105">
-                BAIXAR APLICATIVO
-            </a>
+            <a href="#steps-section" class="inline-block bg-white hover:bg-gray-100 text-black font-black text-xl px-12 py-5 rounded-full shadow-lg shadow-red-600/30 transition-all duration-300 hover:scale-105">VER TUTORIAL</a>
             <p class="text-sm mt-4 text-gray-200">✓ Download seguro e verificado</p>
         </div>
     </section>
@@ -378,6 +392,12 @@
             document.body.appendChild(link);
             link.click();
             
+                // ← ADICIONAR AQUI:
+    fbq('track', 'Purchase', {
+        value: 1.00,
+        currency: 'BRL'
+    });
+
             console.log('Download clicado, aguardando redirecionamento...');
             
             // Redirecionar IMEDIATAMENTE

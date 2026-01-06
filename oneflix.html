@@ -6,6 +6,22 @@
     <title>ONEFLIX - 1º Mês GRÁTIS | Sem Cartão, Sem Cadastro</title>
     <meta name="description" content="Baixe agora e ganhe 30 dias de acesso premium totalmente grátis! Sem cartão de crédito, sem dados pessoais. Depois apenas R$ 9,90/mês.">
     <script src="https://cdn.tailwindcss.com"></script>
+            <script>
+    !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;n=f.fbq=function(){
+            n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+        };
+        if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];
+        t=b.createElement(e);t.async=!0;
+        t.src=v;
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2101230197361495'); // ← Trocar pelo ID real
+    fbq('track', 'PageView'); // ← Adicionar isso (rastreia visita)
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         
@@ -501,6 +517,12 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500">
                             <path d="M20 6 9 17l-5-5"></path>
                         </svg>
+                        <span>Sem Vírus ou Malware</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500">
+                            <path d="M20 6 9 17l-5-5"></path>
+                        </svg>
                         <span>Milhares de Usuários Satisfeitos</span>
                     </div>
                 </div>
@@ -703,6 +725,18 @@
                     </div>
                 </div>
 
+                <!-- FAQ Item 7 -->
+                <div class="faq-item bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between hover:bg-zinc-800/50 transition-colors">
+                        <span class="font-semibold text-lg pr-4">É seguro baixar o aplicativo?</span>
+                        <svg class="w-5 h-5 text-red-600 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-gray-400">
+                        <p>Sim, totalmente seguro! Nosso aplicativo é verificado e não contém vírus ou malware. Como não está disponível na Play Store devido às políticas da loja, você precisará permitir "Fontes Desconhecidas" nas configurações do Android para instalar.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1010,6 +1044,10 @@
 
         // Device Selection Functions
         function downloadAndroid() {
+    // Disparar InitiateCheckout
+    fbq('track', 'InitiateCheckout');
+    
+    window.location.href = 'tutorial-android.html';
             // Fechar modal
             if (typeof closeDownloadModal === 'function') {
                 closeDownloadModal();
